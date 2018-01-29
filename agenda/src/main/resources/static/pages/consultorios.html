@@ -1,0 +1,7 @@
+<!-- Div exibir consultas -->
+	<div data-ng-controller="appAgendaConsultorios" class=jumbotron>
+		<h3 data-ng-bind="app"></h3>
+		<input class="form-control" type="text" data-ng-model="consultorio.nome" placeholder="Nome do consultorio"/>
+		<button class="btn btn-primary btn-block" data-ng-click="cadastrarConsultorio(consultorio)">Cadastrar Consultorio</button>
+		<a href="/home">Voltar</a><br/>
+	</div>

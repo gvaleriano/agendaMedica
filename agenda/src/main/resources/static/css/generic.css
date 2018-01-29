@@ -1,0 +1,18 @@
+
+//Generic Css
+
+.jumbotron{
+	width: 600px;
+	margin-top: 20px;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.form-control{
+	margin-bottom: 5px;
+}
+
+.btn{
+	margin-top: 20px;
+}

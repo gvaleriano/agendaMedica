@@ -1,0 +1,37 @@
+<div data-ng-controller="agendaMedicaCrtl" class="jumbotron">
+		<h3 data-ng-bind="app"></h3>
+		<a href="/medicos">Cadastrar medico</a><br/>
+		<a href="/consultas">Cadastrar consultas</a><br/>
+		<a href="/consultorios">Cadastro de consultorios</a><br/>
+</div>
+<div class="jumbotron" style="width:800px;">
+	<input type="checkbox" data-ng-model="listaConsulta" data-ng-click="exibeConsulta($event)">Exibir consultas<br /><br />
+	<div data-ng-controller="agendaMedicaCrtl" data-ng-show="listaConsulta">
+		<h3 data-ng-bind="app"></h3>
+		<input type="radio" id="date" name="selectFilter" data-ng-model="consulta.paramRadio" data-ng-click="filterBy('date',consulta,'filterData')">Filtrar por data<br /><br />
+		<input class="form-control" id="filterData" type="text" data-ng-model="consulta.paramData" placeholder="data" disabled/>
+		<input type="radio" id="medico" name="selectFilter" data-ng-model="consulta.param" data-ng-click="filterBy('medico',consulta,'filterMedico')">Filtrar por Crm<br /><br />
+		<input class="form-control" id="filterMedico" type="text" data-ng-model="consulta.paramMed" placeholder="Crm" disabled/>
+		<button class="btn btn-primary" id="btnFiltro" data-ng-click="exibeFiltrado(consulta)" disabled>Filtrar</button>
+		<table class="table table-striped">
+			<tr>
+				<th>Nome do Paciente</th>
+				<th>Tipo de Consulta</th>
+				<th>Medico</th>
+				<th>CRM</th>
+				<th>Data</th>
+				<th>Hora</th>
+				<th>Numero do Consultorio</th>
+			</tr>
+			<tr data-ng-repeat="idx in consulta">
+				<td>{{idx.nomePaciente}}</td>
+				<td>{{idx.especConsulta}}</td>
+				<td>{{idx.medico.nome}}</td>
+				<td>{{idx.medico.crm}}</td>
+				<td>{{idx.data}}</td>
+				<td>{{idx.hora}}</td>
+				<td>{{idx.consultorio.id}}</td>
+			</tr>
+		</table>
+	</div>
+</div>

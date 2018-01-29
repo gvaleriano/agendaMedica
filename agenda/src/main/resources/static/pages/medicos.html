@@ -1,0 +1,12 @@
+<!-- Div cadastro de medicos -->
+<form name="medForm">
+	<div data-ng-controller="appAgendaMedicos" class="jumbotron">
+		<h3 data-ng-bind="app"></h3>
+		<input class="form-control" type="text" data-ng-model="medico.nome" name="nome" placeholder="Nome"  />
+		<input class="form-control" type="text" data-ng-model="medico.crm" name="crm" placeholder="CRM" />
+		<input class="form-control" type="text" data-ng-model="medico.idade" name="idade" placeholder="Idade"  />
+		<input class="form-control" type="text" data-ng-model="medico.especialidade" name="espec" placeholder="Especialidade" />
+		<button class="btn btn-primary btn-block" data-ng-click="cadastrarMedico(medico)">Cadastrar Medico</button>
+		<a href="/home">Voltar</a><br/>
+	</div>
+</form>
